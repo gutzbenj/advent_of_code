@@ -1,6 +1,4 @@
-from pathlib import Path
-
-HERE = Path(__file__).parent
+from tools import load_input
 
 
 def calculate_calories_per_elf(data):
@@ -12,12 +10,12 @@ def calculate_calories_per_elf(data):
 
 
 def solve1():
-    data = Path(HERE / "1" / "input.txt").read_text()
+    data = load_input("2022/1/1")
     return max(calculate_calories_per_elf(data))
 
 
 def solve2():
-    data = Path(HERE / "2" / "input.txt").read_text()
+    data = load_input("2022/1/2")
     data = calculate_calories_per_elf(data)
     data = list(sorted(data, reverse=True))[:3]
     return sum(data)
